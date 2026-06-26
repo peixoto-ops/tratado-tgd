@@ -1,63 +1,110 @@
-# Guia para Agentes — Tratado de Teoria Geral do Direito
+# AGENTS.md — Tratado de Teoria Geral do Direito
 
-> Este repositório produz autonomamente um tratado jurídico em ciclos contínuos.
-> NENHUM gate humano obrigatório — o sistema escreve, revisa e compila.
-> O humano é REVISOR, não GATE. Pode ou não intervir.
+Guia para agentes (humanos ou LLMs) que trabalharem neste repositorio.
 
-## Regras de Trabalho
+## Proposito
 
-1. **Ontologia primeiro (CDDir)** — Nunca escrever sem antes classificar o CDD do capítulo
-2. **Pesquisa antes de escrever** — Servidores MCP locais (acervo SQLite, Zotero) têm prioridade
-3. **FIRAC adaptado** — Fato histórico → Tese do autor → Corrente contrária → Aplicação prática → Conexão com CDD
-4. **Gate 2.5 obrigatório** — 7-mode checklist (Lu et al.) antes de qualquer publicação
-5. **Cada capítulo gera material prático** — Por mais abstrato que seja, deve ter seção "Aplicação no Escritório"
-6. **Sempre anexar atualização** — Cada capítulo termina com "Roteiro de Atualização" (jurisprudência nova, doutrina recente)
-7. **pt-BR obrigatório** em todo conteúdo
-8. **Fonte verificada ou não existe** — Nala Strawberry: cada claim tem âncora física
+Produzir autonomamente um Tratado de Teoria Geral do Direito em ciclos
+continuos. A obra tem 20 capitulos em 5 Partes, com duas faces integradas:
+teorica (academica) e pratica (escritorio).
 
-## Pipeline de Produção
+## Nodes da Mesh
 
-Os 8 cronjobs no Aspire (HERMES) orquestram via SSH:
-
-```
-02:00 — pesquisa-diaria.sh    → Fase 1: Fontes MCP + web
-03:00 — fichamento-diario.sh  → Fase 2: FIRAC adaptado
-Sáb 06:00 — escrita-semanal   → Fase 3: DeepSeek-V3 redige
-Sáb 07:00 — gate-25.sh        → Fase 3.5: 7-mode checklist
-1º/15º Sáb 08:00 — revisao    → Fase 4: Conselho de Sócios
-1º Dom 08:00 — compilacao     → Fase 5: Pandoc + Eisvogel
-04:00 diário — auto-reflexao  → Fase 6: Relatório de progresso
-Dom 04:00 — curador           → Curador: telemetria + consolidação
-```
+| No | Funcao | Acesso |
+|:---|:-------|:-------|
+| **Apollo (Inspirion)** | Repositorio e execucao dos scripts | ssh peixoto@inspirion.tail7a899b.ts.net |
+| **Aspire (Hermes)** | Orquestracao dos 8 cronjobs e delivery Telegram | Maquina local |
+| **CERYX** | Pesquisa batch (LLM local Qwen 7B) ~03:00 | ssh root@ceryx |
 
 ## Estrutura de Arquivos
 
-| Caminho | Conteúdo |
+| Caminho | Conteudo |
 |:--------|:---------|
-| `00-09_GOVERNANCA/00.00 - ADR-NNN-titulo.md` | Decisões arquiteturais |
-| `10-19_FUNDAMENTOS/11.00 - Capitulo-N-titulo.md` | Capítulos da Parte I |
-| `20-29_METODOLOGIA/21.00 - Capitulo-N-titulo.md` | Capítulos da Parte II |
-| `30-39_DOGMATICA/31.00 - Capitulo-N-titulo.md` | Capítulos da Parte III |
-| `40-49_APLICACAO/41.00 - Caso-Nome.md` | Casos do escritório como capítulos |
+| `00-09_GOVERNANCA/00.00 - ADR-NNN-titulo.md` | Decisoes arquiteturais |
+| `10-19_FUNDAMENTOS/11.00 - Capitulo-N-titulo.md` | Capitulos Parte I (CDDir 340) |
+| `20-29_METODOLOGIA/21.00 - Capitulo-N-titulo.md` | Capitulos Parte II (CDDir 340.02) |
+| `30-39_DOGMATICA/31.00 - Capitulo-N-titulo.md` | Capitulos Parte III (CDDir 341-348) |
+| `40-49_APLICACAO/41.00 - Caso-Nome.md` | Casos reais como capitulos |
 | `50-59_FONTES/51.00 - Fichamento-Autor.md` | Fichamentos FIRAC de doutrina |
-| `60-69_SCRIPTS/61.00 - pesquisa-diaria.sh` | Scripts do pipeline |
-| `70-79_PRODUCAO/71.00 - tratado-v1.0.pdf` | PDFs compilados |
+| `60-69_SCRIPTS/61.00-*.sh` | Scripts do pipeline |
+| `70-79_PRODUCAO/71.00 - tratado-v*.pdf` | PDFs compilados |
 | `80-89_REFERENCIAS/81.00 - NotebookLM.md` | Notas de pesquisa |
-| `90-99_META/91.00 - handoff-AAAAMMDD.md` | Encerramentos de sessão |
+| `90-99_META/91.00 - handoff-AAAAMMDD.md` | Encerramentos de sessao |
 
-## Camadas de Abstração
+## Regras de Trabalho
 
-TODO capítulo, independente do nível de abstração, DEVE ter:
+### 1. CDDir Primeiro
+Antes de escrever QUALQUER conteudo, classificar por CDDir.
+A topografia cientifica precede a geracao de texto.
+NUNCA inventar sumario empirico.
 
-1. **Seção Teórica** — O conceito, sua origem, correntes doutrinárias
-2. **Seção de Jurisprudência** — Precedentes STJ/STF relevantes (via acervo SQLite)
-3. **Seção Prática** — Como usar no dia a dia do escritório (modelos, checklists)
-4. **Seção de Atualização** — Roteiro para manter o capítulo vivo (jurisprudência nova, doutrina recente)
+### 2. Pesquisa Antes de Escrever
+Prioridade de fontes:
+1. Acervo SQLite (precedentes processados)
+2. Zotero (PDFs marcados, notas)
+3. Vade Mecum LKE (legislacao anotada)
+4. BDTD/CAPES/SciELO (teses e periodicos)
+5. DuckDuckGo/Web (fallback gratuito)
 
-## Comunicação com Aspire
+### 3. FIRAC Adaptado para Doutrina
+- **Fato:** Contexto historico da corrente doutrinaria
+- **Tese:** O que o autor defende
+- **Corrente:** Antitese (corrente contraria)
+- **Aplicacao:** Como usar no escritorio
+- **CDD:** Classificacao Decimal de Direito
 
-- Scripts no Apollo são chamados via SSH do Aspire (HERMES)
-- Output dos scripts volta como stdout do cron → entregue no Telegram
-- NUNCA iniciar ações no Apollo que escrevam no Aspire
-- Resultados de pesquisa: salvar em 50-59_FONTES/
-- Capítulos prontos: salvar em 10-19_FUNDAMENTOS/ (ou 20-29, 30-39 conforme a parte)
+### 4. Quatro Secoes Obrigatorias
+TODO capitulo DEVE ter:
+- **Teoria:** Conceitos, correntes, clasicos
+- **Jurisprudencia:** Precedentes STJ/STF via acervo SQLite
+- **Pratica:** Checklist, modelo, caso real
+- **Atualizacao:** Roteiro de fontes futuras
+
+### 5. Gate 2.5 (7-mode checklist)
+Antes de compilar, verificar:
+1. Bugs (TODO/FIXME?)
+2. Alucinacao (fontes existem?)
+3. Atalhos (argumentos retoricos sem lastro?)
+4. Bug como descoberta (framing errado?)
+5. CDDir presente?
+6. Frame-lock (evidencia contraria ignorada?)
+7. Citacao fantasma (jurisprudencia real?)
+
+### 6. Fonte Verificada ou Nao Existe — Nala Strawberry
+Cada claim DEVE ter ancora fisica (arquivo, URL, DOI).
+Se a fonte nao estiver acessivel, NAO afirmar.
+
+### 7. pt-BR Obrigatorio
+Nada em ingles. Todo conteudo em portugues brasileiro.
+
+### 8. Sem Gate Humano
+O sistema executa autonomamente. O humano e REVISOR.
+Resultados chegam via Telegram. O humano pode ou nao intervir.
+
+## Autonomia (ADR-029)
+
+| Tipo | Autonomia |
+|:-----|:----------|
+| PATCH (bugfix em script) | Autonomo |
+| MINOR (novo script/fichamento) | Autonomo + notificar |
+| MAJOR (mudar estrutura) | Notificar antes |
+
+## Estilo de Escrita
+
+- Tom academico mas aplicado
+- Referencias a clasicos: Reale, Ferraz Jr., Bobbio, Kelsen, Hart, Alexy
+- Jurisprudencia minima: 1 precedente STJ/STF por secao
+- Conexao com o escritorio em cada capitulo
+
+## Cronjobs (Aspire)
+
+| Nome | Schedule | Descricao |
+|:-----|:---------|:----------|
+| tratado-pesquisa-diaria | 0 2 * * * | Fase 1: consultar MCP + web |
+| tratado-fichamento-diario | 0 3 * * * | Fase 2: fichar novas fontes |
+| tratado-escrita-semanal | 0 6 * * 6 | Fase 3: escrever 1 secao |
+| tratado-gate-sabado | 0 7 * * 6 | Fase 3.5: 7-mode checklist |
+| tratado-revisao-quinzenal | 0 8 1-7,15-21 * 6 | Fase 4: Conselho de Socios |
+| tratado-compilacao-mensal | 0 8 1-7 * 0 | Fase 5: PDF Eisvogel |
+| tratado-auto-reflexao | 0 4 * * * | Fase 6: relatorio progresso |
+| tratado-curador-semanal | 0 4 * * 0 | Curadoria: telemetria + consolidacao |
