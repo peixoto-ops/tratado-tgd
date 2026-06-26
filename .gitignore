@@ -1,0 +1,6 @@
+*.pdf
+*.odt
+*.pptx
+.DS_Store
+__pycache__/
+*.pyc
