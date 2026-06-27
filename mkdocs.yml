@@ -1,0 +1,90 @@
+# Configuração MkDocs para o Tratado de Teoria Geral do Direito
+# Deploy automático via GitHub Actions para peixoto-ops.github.io/tratado-tgd/
+# Futuramente docs.luizpeixoto.com/tratado/
+
+site_name: Tratado de Teoria Geral do Direito
+site_description: Obra autoproduzida pelo ecossistema LKE 5.0 — mesh multi-agente
+site_author: Luiz Peixoto (OAB/RJ 94.719) & Mesh LKE 5.0
+site_url: https://peixoto-ops.github.io/tratado-tgd/
+repo_url: https://github.com/peixoto-ops/tratado-tgd
+repo_name: peixoto-ops/tratado-tgd
+edit_uri: edit/main/docs/
+
+theme:
+  name: material
+  language: pt-BR
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-night
+        name: Modo escuro
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-sunny
+        name: Modo claro
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.expand
+    - navigation.sections
+    - navigation.indexes
+    - search.highlight
+    - search.suggest
+    - content.code.copy
+    - content.action.edit
+  logo: assets/logo.png
+  favicon: assets/favicon.ico
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/peixoto-ops
+      name: Peixoto Ops no GitHub
+  generator: false
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - footnotes
+  - toc:
+      permalink: true
+      title: Nesta página
+  - attr_list
+  - md_in_html
+  - pymdownx.tasklist:
+      custom_checkbox: true
+
+plugins:
+  - search:
+      lang: pt
+  - git-revision-date-localized:
+      enable_creation_date: true
+  - minify:
+      minify_html: true
+
+nav:
+  - Início: index.md
+  - Fundamentos:
+    - Introdução Metodológica: fundamentos/introducao-metodologica.md
+    - "ADR-001: Fundação do Tratado": fundamentos/adr-001-fundacao-tratado.md
+    - Capítulo 1 - Ontologia Jurídica: fundamentos/capitulo-1-ontologia-cddir.md
+  - Pipeline:
+    - Visão Geral: scripts/index.md
+  - Repositório:
+    - GitHub: https://github.com/peixoto-ops/tratado-tgd
+
+# Dev only — remove in production if not needed
+dev_addr: "127.0.0.1:8000"
