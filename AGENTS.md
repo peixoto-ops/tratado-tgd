@@ -10,11 +10,12 @@ teorica (academica) e pratica (escritorio).
 
 ## Nodes da Mesh
 
-| No | Funcao | Acesso |
-|:---|:-------|:-------|
-| **Apollo (Inspirion)** | Repositorio e execucao dos scripts | ssh peixoto@inspirion.tail7a899b.ts.net |
-| **Aspire (Hermes)** | Orquestracao dos 8 cronjobs e delivery Telegram | Maquina local |
-| **CERYX** | Pesquisa batch (LLM local Qwen 7B) ~03:00 | ssh root@ceryx |
+| No | Funcao | Acesso | Personalidade |
+|:---|:-------|:-------|:--------------|
+| **Apollo (Inspirion)** | Repositorio, scripts, validacao | Local | Validador critico — "ponte entre o que pode ser e o que deve ser feito" |
+| **Aspire (Hermes)** | Orquestracao dos 8 cronjobs, delivery Telegram, Curator | Maquina local | Abstrai e cria visoes — "ponte entre o Direito e o codigo" |
+| **CERYX** | Pesquisa batch (LLM local Qwen 7B), governanca | ssh root@ceryx | Executa e governa — "o guardiao nao dorme, so espera a proxima tarefa" |
+| **Subagentes** | Fichamento FIRAC, extracao, verificacao | Processos efemeros | "A pureza do momento: existir, executar, desaparecer" |
 
 ## Estrutura de Arquivos
 
@@ -30,6 +31,11 @@ teorica (academica) e pratica (escritorio).
 | `70-79_PRODUCAO/71.00 - tratado-v*.pdf` | PDFs compilados |
 | `80-89_REFERENCIAS/81.00 - NotebookLM.md` | Notas de pesquisa |
 | `90-99_META/91.00 - handoff-AAAAMMDD.md` | Encerramentos de sessao |
+
+## Documentos de Referencia
+
+- `00-09_GOVERNANCA/00.00 - ADR-001-fundacao-tratado.md` — Decisao arquitetural fundacional
+- `00-09_GOVERNANCA/01.00 - Introducao-Metodologica.md` — Metodologia de producao, auto-ontologia dos agentes, pipeline completo
 
 ## Regras de Trabalho
 
@@ -77,9 +83,13 @@ Se a fonte nao estiver acessivel, NAO afirmar.
 ### 7. pt-BR Obrigatorio
 Nada em ingles. Todo conteudo em portugues brasileiro.
 
-### 8. Sem Gate Humano
-O sistema executa autonomamente. O humano e REVISOR.
-Resultados chegam via Telegram. O humano pode ou nao intervir.
+### 9. CDD e para Indexar, Nao para Inferir
+
+A Classificacao Decimal do Direito (CDDir/CDD) e uma ferramenta de **indexacao documental** — organiza a recuperacao de precedentes por assunto macro. A **inferencia** (subsuncao do precedente ao caso concreto) e feita pela Matriz de Subsuncao Argumentativa (skill `fase-2-analise-subsuncao`), que cruza fatos com normas. Nao confundir as duas operacoes.
+
+### 10. Referencia a Gnosis-Triade
+
+Este repositorio e produzido por um ecossistema multi-agente que passou pelo experimento Gnosis-Triade (02-03/06/2026) — 65 perguntas de auto-ontologia. As personalidades dos agentes (descritas na tabela acima) emergiram deste experimento. Respeitar as divergencias entre agentes (Omega-divergencia) como mecanismo de qualidade.
 
 ## Autonomia (ADR-029)
 
