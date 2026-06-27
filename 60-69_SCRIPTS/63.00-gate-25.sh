@@ -12,15 +12,27 @@ echo "## [1/7] Bugs"
 grep -cP '\b(TODO|FIXME)\b' "$CAP" 2>/dev/null | grep -qv '^0$' && echo "WARN: marcadores TODO/FIXME encontrados" || echo "PASS"
 
 echo "## [2/7] Alucinacao"
-CIT_JUR=$(grep -cP 'REsp|STJ|STF|TRF|TJRJ|TJSP|TJ|TRF[1-5]' "$CAP" 2>/dev/null || echo 0)
-CIT_DOUT=$(grep -ciP '[A-ZÇÁÉÍÓÚÂÊÔÃÕ]+,'"'"'?[A-Z][a-z]+.*[12][0-9]{3}' "$CAP" 2>/dev/null || echo 0)
+CIT_JUR=0
+for pat in 'REsp [0-9]' 'STJ,' 'STF' 'TRF[1-5]' 'TJRJ' 'TJSP'; do
+  n=$(grep -cP "$pat" "$CAP" 2>/dev/null)
+  n=${n:-0}
+  CIT_JUR=$((CIT_JUR + n))
+done
+CIT_DOUT=0
+# Formato ABNT direto: AUTOR, Nome. Titulo. ed. Local, Ano.
+dout_abnt=$(grep -cP '^[-–—]\s+[A-ZÇÁÉÍÓÚÂÊÔÃÕ]+,' "$CAP" 2>/dev/null); dout_abnt=${dout_abnt:-0}
+CIT_DOUT=$((CIT_DOUT + dout_abnt))
+# Formato paren: (AUTOR, ano)
+dout_paren=$(grep -cP '\([A-Z][a-zà-ú]+,[^)]+[12][0-9]{3}\)' "$CAP" 2>/dev/null); dout_paren=${dout_paren:-0}
+CIT_DOUT=$((CIT_DOUT + dout_paren))
 echo "INFO: $CIT_JUR citacoes jurisprudenciais, $CIT_DOUT citacoes doutrinarias"
 
 echo "## [3/7] Atalhos"
 grep -qiP '\b(obviamente|naturalmente|evidentemente|induvidosamente|inegavelmente)\b' "$CAP" 2>/dev/null && echo "WARN: atalhos retoricos" || echo "PASS"
 
 echo "## [4/7] Estrutura"
-grep -qiP '(se[çc]ão\s*te[óo]rica|se[çc]ão\s*pr[áa]tica|se[çc]ão\s*d[ée] jurisprud.ncia|se[çc]ão\s*d[ée] atualiza[çc][ãa]o)' "$CAP" 2>/dev/null && echo "PASS: estrutura conforme template" || echo "WARN: template pode nao estar completo"
+SECOES=$(grep -cPi '^## (se[çc]ão|secao)\s' "$CAP" 2>/dev/null || echo 0)
+[ "$SECOES" -ge 4 ] && echo "PASS: $SECOES secoes encontradas" || echo "WARN: apenas $SECOES secoes (esperado 4: Teorica, Jurisprudencia, Pratica, Atualizacao)"
 
 echo "## [5/7] CDDir"
 grep -qiP '\b(CDDir|CDD[ \t]*\d)' "$CAP" 2>/dev/null && echo "PASS: CDDir referenciado" || { echo "FAIL: CDDir nao referenciado (obrigatorio)"; FAILS=$((FAILS+1)); }
