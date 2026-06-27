@@ -15,7 +15,9 @@ echo "## Capitulos: $NUM"
 echo "$CAPS" | while read -r c; do echo "- $(basename "$c" .md)"; done
 
 if [ "$NUM" -gt 0 ] && command -v pandoc &>/dev/null; then
-    cat $CAPS > /tmp/tratado-completo.md
+    # Escapar espacos no nome dos arquivos
+    CAPS_ESC=$(echo "$CAPS" | sed 's/ /\\ /g')
+    eval cat $CAPS_ESC > /tmp/tratado-completo.md
     pandoc /tmp/tratado-completo.md -o "$ARQUIVO" \
         --pdf-engine=xelatex --template eisvogel --toc --toc-depth=2 \
         --number-sections \
