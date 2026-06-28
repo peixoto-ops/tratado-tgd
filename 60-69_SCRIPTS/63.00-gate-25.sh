@@ -31,7 +31,8 @@ echo "## [3/7] Atalhos"
 grep -qiP '\b(obviamente|naturalmente|evidentemente|induvidosamente|inegavelmente)\b' "$CAP" 2>/dev/null && echo "WARN: atalhos retoricos" || echo "PASS"
 
 echo "## [4/7] Estrutura"
-SECOES=$(grep -cPi '^## (se[çc]ão|secao)\s' "$CAP" 2>/dev/null || echo 0)
+SECOES=$(grep -cPi '^## (se[çc]ão|secao)\s' "$CAP" 2>/dev/null)
+SECOES=${SECOES:-0}
 [ "$SECOES" -ge 4 ] && echo "PASS: $SECOES secoes encontradas" || echo "WARN: apenas $SECOES secoes (esperado 4: Teorica, Jurisprudencia, Pratica, Atualizacao)"
 
 echo "## [5/7] CDDir"

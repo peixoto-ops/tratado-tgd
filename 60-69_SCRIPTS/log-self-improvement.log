@@ -1,3 +1,232 @@
 INFO: 1 arquivos modificados - commitando...
 INFO: 1 capitulos, 0 fontes fichadas
 OK: auto-aprimoramento concluido em sáb 27 jun 2026 00:00:02 -03
+OK
+# Relatorio de Auto-Aprimoramento - 2026-06-27 06:00
+
+## 1.1 Mudancas encontradas: 1 arquivos
+ M 60-69_SCRIPTS/log-auto-aprimoramento-20260627.md
+Commit auto-save realizado.
+
+## 1.2 Saude
+- Capitulos escritos: 1
+- Fontes fichadas: 0
+- Fichamentos FIRAC: 0
+
+## 1.3 Ultimo Gate 2.5
+Script: 60-69_SCRIPTS/63.00-gate-25.sh
+
+## 1.4 Capitulo 1
+- Linhas: 321
+- Palavras: 5258
+- OK: Seção Teórica presente
+- OK: Seção de Jurisprudência presente
+- OK: Seção Prática presente
+- OK: Seção de Atualização presente
+
+## 2.1 Remote configurado: origin	git@github.com:peixoto-ops/tratado-tgd.git (fetch)
+
+## 2.2 CERYX: acessivel
+
+## 2.3 Aspire (HERMES): acessivel
+
+## 3. Recomendacoes
+
+- [REC] Fontes fichadas (0) menor que capitulos (1) — pesquisar mais
+
+---
+Resumo: 1 capitulos, 0 fontes, 1 recomendacoes.
+Auto-aprimoramento concluido em sáb 27 jun 2026 06:00:05 -03.
+OK
+# Relatorio de Auto-Aprimoramento - 2026-06-27 12:00
+
+## 1.1 Mudancas encontradas: 6 arquivos
+ M 60-69_SCRIPTS/63.00-gate-25.sh
+ M 60-69_SCRIPTS/log-auto-aprimoramento-20260627.md
+ M 60-69_SCRIPTS/log-self-improvement.log
+?? "20-29_METODOLOGIA/21.00 - Capitulo-2-Metodologia-Juridica.md"
+?? 60-69_SCRIPTS/log-gate-20260627.md
+?? 60-69_SCRIPTS/log-revisao-20260627.md
+Commit auto-save realizado.
+
+## 1.2 Saude
+- Capitulos escritos: 2
+- Fontes fichadas: 0
+- Fichamentos FIRAC: 0
+
+## 1.3 Ultimo Gate 2.5
+Script: 60-69_SCRIPTS/log-gate-20260627.md
+
+## 1.4 Capitulo 1
+- Linhas: 321
+- Palavras: 5258
+- OK: Seção Teórica presente
+- OK: Seção de Jurisprudência presente
+- OK: Seção Prática presente
+- OK: Seção de Atualização presente
+
+## 2.1 Remote configurado: origin	git@github.com:peixoto-ops/tratado-tgd.git (fetch)
+
+## 2.2 CERYX: acessivel
+
+## 2.3 Aspire (HERMES): acessivel
+
+## 3. Recomendacoes
+
+- [REC] Fontes fichadas (0) menor que capitulos (2) — pesquisar mais
+
+---
+Resumo: 2 capitulos, 0 fontes, 1 recomendacoes.
+Auto-aprimoramento concluido em sáb 27 jun 2026 12:00:06 -03.
+OK
+# Relatorio de Auto-Aprimoramento - 2026-06-27 18:00
+
+## 1.1 Mudancas encontradas: 2 arquivos
+ M 60-69_SCRIPTS/log-auto-aprimoramento-20260627.md
+ M 60-69_SCRIPTS/log-self-improvement.log
+Commit auto-save realizado.
+
+## 1.2 Saude
+- Capitulos escritos: 2
+- Fontes fichadas: 0
+- Fichamentos FIRAC: 0
+
+## 1.3 Ultimo Gate 2.5
+Script: 60-69_SCRIPTS/log-gate-20260627.md
+
+## 1.4 Capitulo 1
+- Linhas: 321
+- Palavras: 5258
+- OK: Seção Teórica presente
+- OK: Seção de Jurisprudência presente
+- OK: Seção Prática presente
+- OK: Seção de Atualização presente
+
+## 2.1 Remote configurado: origin	git@github.com:peixoto-ops/tratado-tgd.git (fetch)
+
+## 2.2 CERYX: acessivel
+
+## 2.3 Aspire (HERMES): acessivel
+
+## 3. Recomendacoes
+
+- [REC] Fontes fichadas (0) menor que capitulos (2) — pesquisar mais
+
+---
+Resumo: 2 capitulos, 0 fontes, 1 recomendacoes.
+Auto-aprimoramento concluido em sáb 27 jun 2026 18:00:04 -03.
+OK
+# Relatorio de Auto-Aprimoramento - 2026-06-28 00:00
+
+## 1.1 Mudancas encontradas: 3 arquivos
+ M 60-69_SCRIPTS/log-auto-aprimoramento-20260627.md
+ M 60-69_SCRIPTS/log-self-improvement.log
+?? 60-69_SCRIPTS/log-auto-aprimoramento-20260628.md
+Commit auto-save realizado.
+
+## 1.2 Saude
+- Capitulos escritos: 2
+- Fontes fichadas: 0
+- Fichamentos FIRAC: 0
+
+## 1.3 Ultimo Gate 2.5
+Script: 60-69_SCRIPTS/log-gate-20260627.md
+
+## 1.4 Capitulo 1
+- Linhas: 321
+- Palavras: 5258
+- OK: Seção Teórica presente
+- OK: Seção de Jurisprudência presente
+- OK: Seção Prática presente
+- OK: Seção de Atualização presente
+
+## 2.1 Remote configurado: origin	git@github.com:peixoto-ops/tratado-tgd.git (fetch)
+
+## 2.2 CERYX: acessivel
+
+## 2.3 Aspire (HERMES): acessivel
+
+## 3. Recomendacoes
+
+- [REC] Fontes fichadas (0) menor que capitulos (2) — pesquisar mais
+
+---
+Resumo: 2 capitulos, 0 fontes, 1 recomendacoes.
+Auto-aprimoramento concluido em dom 28 jun 2026 00:00:08 -03.
+OK
+# Relatorio de Auto-Aprimoramento - 2026-06-28 06:00
+
+## 1.1 Mudancas encontradas: 5 arquivos
+ M 60-69_SCRIPTS/log-auto-aprimoramento-20260628.md
+ M 60-69_SCRIPTS/log-self-improvement.log
+?? 50-59_FONTES/51.00-fichamento-20260628.md
+?? 60-69_SCRIPTS/log-pesquisa-20260628.md
+?? 90-99_META/91.00-curadoria-20260628.md
+Commit auto-save realizado.
+
+## 1.2 Saude
+- Capitulos escritos: 2
+- Fontes fichadas: 1
+- Fichamentos FIRAC: 1
+
+## 1.3 Ultimo Gate 2.5
+Script: 60-69_SCRIPTS/log-gate-20260627.md
+
+## 1.4 Capitulo 1
+- Linhas: 321
+- Palavras: 5258
+- OK: Seção Teórica presente
+- OK: Seção de Jurisprudência presente
+- OK: Seção Prática presente
+- OK: Seção de Atualização presente
+
+## 2.1 Remote configurado: origin	git@github.com:peixoto-ops/tratado-tgd.git (fetch)
+
+## 2.2 CERYX: acessivel
+
+## 2.3 Aspire (HERMES): acessivel
+
+## 3. Recomendacoes
+
+- [REC] Fontes fichadas (1) menor que capitulos (2) — pesquisar mais
+
+---
+Resumo: 2 capitulos, 1 fontes, 1 recomendacoes.
+Auto-aprimoramento concluido em dom 28 jun 2026 06:00:07 -03.
+OK
+# Relatorio de Auto-Aprimoramento - 2026-06-28 12:00
+
+## 1.1 Mudancas encontradas: 2 arquivos
+ M 60-69_SCRIPTS/log-auto-aprimoramento-20260628.md
+ M 60-69_SCRIPTS/log-self-improvement.log
+Commit auto-save realizado.
+
+## 1.2 Saude
+- Capitulos escritos: 2
+- Fontes fichadas: 1
+- Fichamentos FIRAC: 1
+
+## 1.3 Ultimo Gate 2.5
+Script: 60-69_SCRIPTS/log-gate-20260627.md
+
+## 1.4 Capitulo 1
+- Linhas: 321
+- Palavras: 5258
+- OK: Seção Teórica presente
+- OK: Seção de Jurisprudência presente
+- OK: Seção Prática presente
+- OK: Seção de Atualização presente
+
+## 2.1 Remote configurado: origin	git@github.com:peixoto-ops/tratado-tgd.git (fetch)
+
+## 2.2 CERYX: acessivel
+
+## 2.3 Aspire (HERMES): acessivel
+
+## 3. Recomendacoes
+
+- [REC] Fontes fichadas (1) menor que capitulos (2) — pesquisar mais
+
+---
+Resumo: 2 capitulos, 1 fontes, 1 recomendacoes.
+Auto-aprimoramento concluido em dom 28 jun 2026 12:00:05 -03.
