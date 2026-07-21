@@ -1,11 +1,13 @@
 ---
 sprint: S01
-status: in_progress
+status: completed
 data_inicio: 2026-07-21
+data_conclusao: 2026-07-21
 previsao_conclusao: 2026-07-28
 foco: "Fechar Capítulo 3 — Epistemologia dos Sistemas Agênticos + reativar pipeline semanal"
 gate_anterior: S00
 gate_proximo: S02
+gate_resultado: PASS (3/3 critérios, 0 FAIL no Gate 2.5)
 dependencias: []
 max_correcoes: 3
 tasks:
@@ -13,36 +15,37 @@ tasks:
     descricao: "Auditar estado atual do Capítulo 3 — verificar 5 seções, lacunas, consistência"
     entregavel: "[[30-39_EPISTEMOLOGIA/30.99-capitulo-3-compilado.md]]"
     esforco_h: 1
-    status: pending
+    status: completed
     subagente: leaf
   - id: S01.2
     descricao: "Aplicar Gate 2.5 (7-mode checklist) em cada uma das 5 seções do Cap. 3"
     entregavel: "[[30-39_EPISTEMOLOGIA]]"
     esforco_h: 2
-    status: pending
+    status: completed
     subagente: leaf
   - id: S01.3
     descricao: "Escrever seção 3.6 (Conclusão do Capítulo 3) — síntese das 5 seções + conexão com Cap. 4"
     entregavel: "[[30-39_EPISTEMOLOGIA/30.05-capitulo-3-secao-6.md]]"
     esforco_h: 2
-    status: pending
+    status: completed
     subagente: leaf
   - id: S01.4
     descricao: "Compilar Capítulo 3 completo em arquivo único + revisão de transições entre seções"
     entregavel: "[[30-39_EPISTEMOLOGIA/30.99-capitulo-3-compilado.md]]"
     esforco_h: 2
-    status: pending
+    status: completed
     subagente: leaf
   - id: S01.5
-    descricao: "Push para GitHub — commitar 57 commits locais + sincronizar com origin/main"
+    descricao: "Push para GitHub — commitar 58 commits (1 novo) + sincronizar com origin/main"
     entregavel: "git push origin main"
     esforco_h: 1
-    status: pending
+    status: completed
     subagente: leaf
 issues_emergentes:
-  - "Pipeline semanal parou em 03/07 — cronjobs no Aspire podem estar inativos"
-  - "57 commits ahead do remoto — risco de perda de dados em caso de falha de disco"
-  - "Capítulo 3 nunca passou pelo Gate 2.5"
+  - "[RESOLVIDO] Pipeline semanal parou em 03/07 — migrado para ORS chain no APOLLO (sprint-automator)"
+  - "[RESOLVIDO] 58 commits ahead do remoto — push bem-sucedido em 21/07"
+  - "[RESOLVIDO] Capítulo 3 nunca passou pelo Gate 2.5 — 26/26 PASS, 0 FAIL (8 PARTIAL corrigidos)"
+  - "[NOVO] Gate 2.5 report salvo em 30-39_EPISTEMOLOGIA/gate-2.5-capitulo3.md"
 modificacoes_roadmap:
   - "Migrar de 8 cronjobs no Aspire para ORS chain no APOLLO (sprint-automator)"
 gate_criterios:
@@ -59,6 +62,11 @@ log:
   - "2026-07-21 15:15: Sprint S01 criada pelo HERMES (Aspire) via ORS"
   - "2026-07-21 15:15: sprint-automator skill propagada para APOLLO"
   - "2026-07-21 15:15: Substitui pipeline de 8 cronjobs no Aspire por ORS local"
+  - "2026-07-21 CRON: S01 executado pelo APOLLO. Auditoria + Gate 2.5 delegados a subagentes."
+  - "2026-07-21 CRON: Correções aplicadas — header 30.00, CDD adicionado 3.2-3.5, Brooks removido."
+  - "2026-07-21 CRON: Seção 3.6 escrita (99 linhas). Capítulo compilado (519 linhas, 6 seções)."
+  - "2026-07-21 CRON: git push — 8 arquivos, 770 inserções, 1 novo commit (3f7c060)."
+  - "2026-07-21 CRON: Heuristic Gate PASS (3/3). Sprint S01 concluída."
 ---
 # Sprint S01 — Fechar Capítulo 3
 

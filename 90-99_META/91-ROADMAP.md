@@ -26,7 +26,7 @@ modo: ors
 
 | Sprint | Capítulo | Status | Previsão |
 |:-------|:---------|:-------|:---------|
-| **S01** | **Cap. 3 — Epistemologia** (5 seções) | 🔴 **Em andamento — pipeline parou 03/07** | **S01 ativo** |
+| **S01** | **Cap. 3 — Epistemologia** (6 seções) | ✅ Completo (519 linhas, 21/07) | **S01 concluído** |
 | S02 | Cap. 4 — Teoria da Norma | ⏳ Pendente | Pós S01 |
 | S03 | Cap. 5 — Fontes do Direito | ⏳ Pendente | Pós S02 |
 | S04 | Cap. 6 — Interpretação Jurídica | ⏳ Pendente | Pós S03 |
